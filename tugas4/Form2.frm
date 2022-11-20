@@ -9,11 +9,35 @@ Begin VB.Form Form2
    ScaleHeight     =   4485
    ScaleWidth      =   5925
    StartUpPosition =   3  'Windows Default
+   Begin VB.OptionButton Percobaan 
+      Caption         =   "Percobaan"
+      Height          =   255
+      Left            =   1680
+      TabIndex        =   10
+      Top             =   1800
+      Width           =   1335
+   End
+   Begin VB.OptionButton Kontrak 
+      Caption         =   "Kontrak"
+      Height          =   255
+      Left            =   1680
+      TabIndex        =   9
+      Top             =   1440
+      Width           =   1455
+   End
+   Begin VB.OptionButton Tetap 
+      Caption         =   "Tetap"
+      Height          =   375
+      Left            =   1680
+      TabIndex        =   8
+      Top             =   960
+      Width           =   1335
+   End
    Begin VB.CommandButton Command2 
       Caption         =   "Tugas 4B"
       Height          =   735
       Left            =   3720
-      TabIndex        =   10
+      TabIndex        =   7
       Top             =   3120
       Width           =   1695
    End
@@ -21,7 +45,7 @@ Begin VB.Form Form2
       Caption         =   "Selesai"
       Height          =   735
       Left            =   1920
-      TabIndex        =   9
+      TabIndex        =   6
       Top             =   3120
       Width           =   1695
    End
@@ -29,7 +53,7 @@ Begin VB.Form Form2
       Caption         =   "Ulangi"
       Height          =   735
       Left            =   240
-      TabIndex        =   8
+      TabIndex        =   5
       Top             =   3120
       Width           =   1455
    End
@@ -37,33 +61,9 @@ Begin VB.Form Form2
       Enabled         =   0   'False
       Height          =   495
       Left            =   1560
-      TabIndex        =   6
+      TabIndex        =   3
       Top             =   2280
       Width           =   1935
-   End
-   Begin VB.CheckBox Percobaan 
-      Caption         =   "Percobaan"
-      Height          =   255
-      Left            =   1680
-      TabIndex        =   5
-      Top             =   1800
-      Width           =   1335
-   End
-   Begin VB.CheckBox Kontrak 
-      Caption         =   "Kontrak"
-      Height          =   255
-      Left            =   1680
-      TabIndex        =   4
-      Top             =   1440
-      Width           =   975
-   End
-   Begin VB.CheckBox Tetap 
-      Caption         =   "Tetap"
-      Height          =   195
-      Left            =   1680
-      TabIndex        =   3
-      Top             =   1080
-      Width           =   1215
    End
    Begin VB.TextBox Gaji 
       Height          =   375
@@ -76,7 +76,7 @@ Begin VB.Form Form2
       Caption         =   "Gaji Diterima"
       Height          =   375
       Left            =   120
-      TabIndex        =   7
+      TabIndex        =   4
       Top             =   2400
       Width           =   975
    End
@@ -115,14 +115,16 @@ If Not (KeyAscii >= Asc("0") And KeyAscii <= Asc("9") Or KeyAscii = vbKeyBack) T
 End Sub
 
 Private Sub Kontrak_Click()
- Me.Percobaan.Value = False
- Me.Tetap.Value = False
+
 Me.Diterima.text = Me.Gaji * 90 / 100
 End Sub
 
+Private Sub Option1_Click()
+
+End Sub
+
 Private Sub Percobaan_Click()
- Me.Kontrak.Value = False
- Me.Tetap.Value = False
+
 Me.Diterima.text = Me.Gaji * 75 / 100
 End Sub
 
@@ -131,8 +133,7 @@ End
 End Sub
 
 Private Sub Tetap_Click()
-Me.Percobaan.Value = False
-Me.Kontrak.Value = False
+
 Me.Diterima.text = Me.Gaji * 100 / 100
 End Sub
 
